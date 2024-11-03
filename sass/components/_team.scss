@@ -1,0 +1,117 @@
+.team {
+  background-color: $team-background-color;
+  height: 2761px;
+
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    height: 1285px;
+  }
+
+  @media screen and (min-width: $desktop) {
+  height: 708px;
+  }
+
+&__title {
+  @include font(28px, 700, calc(33 / 28));
+
+  display: inline-block;
+  margin-top: 60px;
+  margin-bottom: 30px;
+
+
+  @media screen and (min-width: $desktop) {
+  @include font(36px, 700, calc(42 / 36));
+    margin-top: 94px;
+  margin-bottom: 50px;
+  }
+}
+
+&__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-wrap: nowrap;
+  }
+}
+
+&__item {
+  @include sizes(450px, 622px);
+
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  background: $main-background-color;
+
+  @media screen and (min-width: $tablet) {
+    @include sizes(354px, 536px);
+  }
+
+  @media screen and (min-width: $desktop) {
+@include sizes(270px, 428px);
+  }
+
+// &:not(:last-child) {
+//   margin-right: 30px;
+// }
+}
+
+&__caption {
+  @include font(16px, 500, calc(19 / 16));
+
+  margin-top: 30px;
+}
+
+&__job {
+  color: $third-text-color;
+  @include font(16px, 400, calc(19 / 16));
+
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+}
+
+// Social-media
+
+.team-social-media {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+&__item {
+  @include sizes(44px, 44px);
+  border-radius: 50%;
+
+&:is(:hover, :focus) {
+  background: $logo-color;
+  @include transition(all, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+  @include animation(swing, 1.5s, 1);
+  animation-delay: 150ms;
+}
+
+&:is(:hover, :focus) .team-social-media__svg {
+  fill: $main-background-color;
+  @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+}
+}
+
+&__link {
+  @extend %flex-center;
+
+  @extend %father-sizes;
+}
+
+&__svg {
+  display: block;
+  @include sizes(20px, 20px);
+  fill: $third-text-color;
+}
+}

@@ -1,0 +1,16 @@
+// .portfolio {
+//   margin-bottom: 94px;
+// }
+
+.portfolio {
+  margin-top: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 94px;
+    margin-top: 94px;
+  }
+}

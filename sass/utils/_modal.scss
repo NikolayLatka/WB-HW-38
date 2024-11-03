@@ -1,0 +1,196 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @extend %father-sizes;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include sizes(450px, 609px);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  background: rgb(255, 255, 255);
+  // @include transition(all, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+  @media screen and (min-width: $desktop) {
+    @include sizes(528px, 581px);
+    padding: 15px;
+  }
+
+  &__btn {
+    position: relative;
+    left: 412px;
+    top: 8px;
+
+    @include sizes(30px, 30px);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+    @media screen and (min-width: $desktop) {
+      left: 475px;
+      top: -8px;
+    }
+
+    &:is(:hover, :focus) {
+      fill: $logo-color;
+      @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+    }
+  }
+
+  &__close-btn-svg {
+    @include sizes(13px, 13px);
+  }
+
+  &__title {
+    position: relative;
+    top: 10px;
+
+    @include font(20px, 700, calc(30 / 20));
+    letter-spacing: 3%;
+
+    text-align: center;
+    @include sizes(370px, 60px);
+
+    margin: 0 auto;
+    margin-bottom: 12px;
+
+    @media screen and (min-width: $desktop) {
+      @include font(20px, 700, calc(23 / 20));
+      @include sizes(448px, 23px);
+      top: -7px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  &__input {
+    width: 370px;
+    min-height: 40px;
+
+    box-sizing: border-box;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    padding-left: 42.5px;
+
+    @media screen and (min-width: $desktop) {
+      width: 448px;
+    }
+
+    &:is(:hover, :focus) {
+      border-color: $logo-color;
+      @include transition(border, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+    }
+
+    &:is(:hover, :focus) + .modal__svg {
+      fill: $logo-color;
+      @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+      @include animation(rubberBand, 1.5s, 1);
+    }
+  }
+
+  &__input--comment {
+    @include sizes(370px, 120px);
+    padding-bottom: 90px;
+    min-height: 40px;
+
+    box-sizing: border-box;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 16px;
+    padding-top: 12px;
+
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $desktop) {
+      @include sizes(448px, 120px);
+    }
+  }
+
+  &__label-checkbox {
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    display: flex;
+    align-items: start;
+  }
+
+  &__input-checkbox {
+    background: $main-text-color;
+  }
+
+  &__span {
+    color: $third-text-color;
+
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 1%;
+
+    margin-bottom: 4px;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 14px;
+    }
+
+    &__span:last-child {
+      color: $third-text-color;
+      letter-spacing: 3%;
+    }
+  }
+
+  &__span-link {
+    color: $logo-color;
+    text-decoration: underline;
+  }
+
+  &__svg {
+    position: absolute;
+    left: 14px;
+    top: 54%;
+  }
+
+  &__finish-btn {
+    margin: 0 auto;
+
+    color: $main-background-color;
+
+    @include font(16px, 700, calc(30 / 16));
+    letter-spacing: 6%;
+
+    @include sizes(200px, 50px);
+
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    background: $logo-color;
+  }
+}

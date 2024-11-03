@@ -1,0 +1,47 @@
+.work {
+  margin-bottom: 94px;
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
+
+&__title {
+  @extend %margin-center;
+  margin-bottom: 50px;
+  @include font(36px, 700, calc(42 / 36));
+  text-align: center;
+}
+
+&__list {
+  display: flex;
+  justify-content: center;
+}
+
+&__img-div {
+  position: relative;
+}
+
+&__img-h3 {
+  @extend %flex-center;
+
+  position: absolute;
+  bottom: 0;
+
+  margin-top: 27px;
+
+  color: $main-background-color;
+  font-weight: 700;
+  line-height: calc(16 / 14);
+  letter-spacing: 3%;
+
+  @include sizes(100%, 70px);
+
+  background: $second-background-color;
+  opacity: 80%;
+}
+
+&__item:not(:last-child) {
+  margin-right: 30px;
+}
+}

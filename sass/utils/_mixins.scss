@@ -1,0 +1,20 @@
+@mixin transition($thing, $duration, $type) {
+    transition: $thing $duration $type;
+}
+
+@mixin font($size, $weight, $line-height) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+}
+
+@mixin sizes($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin animation($name, $duration, $iteration-count) {
+    animation: $name;
+    animation-duration: $duration;
+    animation-iteration-count: $iteration-count;
+}

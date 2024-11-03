@@ -1,0 +1,140 @@
+.customers {
+  // margin-left: 185px;
+  height: 519px;
+  @media screen and (min-width: $tablet) {
+    height: 397px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 372px;
+  }
+
+&__title {
+  padding-top: 60px;
+  margin-bottom: 30px;
+  color: $main-text-color;
+
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+  @include font(36px, 700, calc(36 / 42));
+  padding-top: 94px;
+  margin-bottom: 50px;
+  }
+}
+
+&__list {
+  display: flex;
+  // justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+&__item {
+  @include sizes(210px, 92px);
+  box-sizing: border-box;
+  border: 1px solid $third-text-color;
+  border-radius: 4px;
+
+  @extend %flex-center;
+
+  @media screen and (min-width: $tablet) {
+    @include sizes(226px, 92px);
+  }
+
+  @media screen and (min-width: $desktop) {
+  @include sizes(170px, 92px);
+  }
+
+&:is(:hover, :focus) {
+  cursor: pointer;
+  border-color: $logo-color;
+  @include transition(border, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+&:is(:hover, :focus) .customers__svg {
+  fill: $logo-color;
+  @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+
+  @include animation(tada, 1.5s, 1);
+}
+}
+
+&__link {
+  display: block;
+}
+
+&__svg {
+  @extend %flex-center;
+
+  fill: $third-text-color;
+}
+
+&__svg--first {
+  @include sizes(50.27px, 50.23px);
+
+  @media screen and (min-width: $tablet) {
+    @include sizes(43.27px, 43.23px);
+  }
+
+  @media screen and (min-width: $desktop) {
+  @include sizes(46px, 52.7px);
+  }
+}
+
+&__svg--second{
+  @include sizes(53px, 65px);
+
+  @media screen and (min-width: $tablet) {
+  @include sizes(50px, 62px);
+  }
+
+  @media screen and (min-width: $desktop) {
+  @include sizes(48px, 60px);
+  }
+}
+
+&__svg--third {
+  @include sizes(50.46px, 48.18px);
+
+  @media screen and (min-width: $tablet) {
+  @include sizes(45.46px, 43.18px);
+  }
+
+  @media screen and (min-width: $desktop) {
+  @include sizes(43.46px, 41.18px);
+  }
+}
+
+&__svg--fourth {
+  @include sizes(160.44px, 116.62px);
+
+  @media screen and (min-width: $desktop) {
+  @include sizes(170.44px, 126.62px);
+  }
+}
+
+&__svg--fifth {
+  @include sizes(83.54px, 66.43px);
+
+  @media screen and (min-width: $tablet) {
+  @include sizes(75.54px, 58.43px);
+  }
+
+  @media screen and (min-width: $desktop) {
+  @include sizes(77.54px, 60.43px);
+  }
+}
+
+&__svg--sixth {
+  @include sizes(153.79px, 103.93px);
+
+  @media screen and (min-width: $tablet) {
+  @include sizes(133.79px, 83.93px);
+  }
+
+  @media screen and (min-width: $desktop) {
+  @include sizes(153.79px, 103.93px);
+  }
+}
+}

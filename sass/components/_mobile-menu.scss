@@ -1,0 +1,141 @@
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: $main-background-color;
+
+  width: 100vw;
+  height: 100vh;
+
+  outline: 1px solid red;
+
+  transform: translateX(100%);
+  transition: transform 0.4s ease, ease;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-toggle {
+  margin-left: 420px;
+  margin-top: 22px;
+  margin-right: 21px;
+
+  width: 23px;
+  height: 23px;
+
+  background: $main-background-color;
+
+  &:is(:hover, :focus) .menu-svg {
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: $logo-color;
+  }
+}
+
+.menu-svg {
+  width: 23px;
+  height: 23px;
+}
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin-bottom: 302px;
+
+  &__item {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: calc(47 / 40);
+
+    margin-left: 25px;
+
+    &:first-child {
+      width: 139px;
+    }
+
+    &:nth-child(2) {
+      width: 219px;
+    }
+
+    &:last-child {
+      width: 192px;
+    }
+
+    &:is(:hover, :focus) {
+      @extend %animate-links;
+    }
+
+    &:is(:hover, :focus) .menu-nav__link {
+      color: $logo-color;
+    }
+  }
+
+  &__link {
+    color: rgb(33, 33, 33);
+
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--active {
+      color: $logo-color;
+    }
+  }
+}
+
+.menu-contacts {
+  margin-bottom: 64px;
+
+  &__item {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: calc(28 / 24);
+
+    margin-left: 25px;
+
+    &:is(:hover, :focus) {
+      @extend %animate-links;
+    }
+
+    &:first-child {
+      width: 200px;
+      margin-bottom: 32px;
+    }
+
+    &:last-child {
+      width: 231px;
+    }
+    &:is(:hover, :focus) .menu-contacts__link {
+      color: $logo-color;
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__link {
+    color: $third-text-color;
+  }
+}
+
+.menu-social {
+  display: flex;
+  gap: 10px;
+
+  margin-left: 25px;
+
+  &__item {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: calc(22 / 18);
+
+    &:not(:last-child) {
+      padding-right: 10px;
+
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+  }
+
+  &__link {
+    color: $logo-color;
+  }
+}

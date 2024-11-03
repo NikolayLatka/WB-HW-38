@@ -1,0 +1,219 @@
+.header {
+  background-color: $main-background-color;
+  border-bottom: 1px solid $second-text-color;
+
+  &--flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin-top: 24px;
+    margin-bottom: 25px;
+    width: 145px;
+    font-family: "Raleway", sans-serif;
+    @include font(26px, 700, calc(31 / 26));
+
+    @media screen and (min-width: $tablet) {
+      margin-top: 26px;
+      margin-bottom: 26px;
+      margin-right: 88px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 92px;
+    }
+
+    &:is(:hover, :focus) {
+      @extend %animate-links;
+    }
+  }
+
+  &__logo--start {
+    color: $logo-color;
+  }
+
+  &__logo--end {
+    color: $main-text-color;
+  }
+}
+
+// Navigation
+
+.header-nav {
+  display: none;
+  line-height: calc(16 / 14);
+  font-weight: 500;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: auto;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+
+    &:is(:hover, :focus) {
+      @extend %animate-links;
+    }
+
+    &:is(:hover, :focus) .header-nav__link {
+      color: $logo-color;
+      @include transition(color, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+    }
+
+    &:not(:last-child) {
+      width: 42px;
+      margin-right: 51px;
+    }
+
+    &:nth-child(2) {
+      width: 69px;
+      margin-right: 50px;
+    }
+
+    &:nth-child(3) {
+      width: 62px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    color: $main-text-color;
+
+    padding: 10px 0px 32px;
+
+    &::before {
+      content: " ";
+      @extend %header-link-underline;
+
+      transform: scale(0);
+
+      @include transition(transform, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+    }
+
+    &:is(:hover, :focus) {
+      transform: scale(1.25);
+    }
+
+    &:is(:hover, :focus)::before {
+      transform: scale(1);
+    }
+
+    &--active {
+      color: $logo-color;
+    }
+
+    &--active::after {
+      @extend %header-link-underline;
+
+      display: block;
+    }
+  }
+}
+
+// Contacs
+
+.header-contact {
+  display: none;
+  font-weight: 500;
+  line-height: calc(16 / 14);
+  flex-wrap: wrap;
+  gap: 10px;
+  @include font(12px, 500, calc(12 / 14));
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 30px;
+    @include font(14px, 500, calc(14 / 16));
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    // @media screen and (min-width: $desktop) {
+    //   height: 16px;
+    // }
+
+    &:is(:hover, :focus) {
+      @extend %animate-links;
+    }
+
+    &:is(:hover, :focus) .header-contact__link {
+      color: $logo-color;
+      @include transition(color, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+    }
+
+    &:is(:hover, :focus) .header-contact__img {
+      fill: $logo-color;
+      @include transition(fill, 250ms, cubic-bezier(0.4, 0, 0.2, 1));
+    }
+
+    &:first-child {
+      margin-left: auto;
+    }
+
+    &:nth-child(2) {
+      margin-left: 107px;
+      @media screen and (min-width: $desktop) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__img {
+    fill: $third-text-color;
+    // margin-right: 10px;
+    margin-right: 8px;
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 10px;
+    }
+  }
+
+  &__img--start {
+    @include sizes(14px, 10px);
+
+    @media screen and (min-width: $desktop) {
+      @include sizes(20px, 16px);
+    }
+  }
+
+  &__img--end {
+    @include sizes(10px, 14px);
+
+    @media screen and (min-width: $desktop) {
+      @include sizes(19px, 15px);
+    }
+  }
+
+  &__link {
+    color: $third-text-color;
+  }
+}
+
+// Menu
+
+.menu-btn {
+  @extend %flex-center;
+
+  padding: 0;
+  background: $main-background-color;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
