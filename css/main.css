@@ -33,7 +33,7 @@ ol {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -144,7 +144,7 @@ body {
   margin-right: auto;
 }
 
-.projects-list__overlay, .projects-list__img, .subscribe__btn, .team-social-media__link, .backdrop {
+.projects-list__overlay, .subscribe__btn, .team-social-media__link, .backdrop {
   width: 100%;
   height: 100%;
 }
@@ -1637,9 +1637,16 @@ body {
   -webkit-transition: all 275ms ease-in-out 83ms;
   transition: all 275ms ease-in-out 83ms;
 }
+.projects-list__link {
+  height: 294px;
+}
 .projects-list__img--wrapp {
   position: relative;
   overflow: hidden;
+}
+.projects-list__img {
+  width: 100%;
+  height: 294px;
 }
 .projects-list__overlay {
   position: absolute;
