@@ -42,9 +42,9 @@
     }
   }
 
-  &__link {
-    height: 294px;
-  }
+  // &__link {
+  //   height: 294px;
+  // }
 
   &__img--wrapp {
     position: relative;
@@ -57,7 +57,11 @@
   &__img {
     width: 100%;
     // @extend %father-sizes;
-    height: 294px;
+    // height: 330px;
+
+    // @media screen and (min-width: $tablet) {
+    //   height: 294px;
+    // }
   }
 
   &__overlay {
