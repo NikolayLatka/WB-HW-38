@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebStudio</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon-webstudio.ico" />
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header--flex">
+        <a class="header__logo" href="./index.html"
+          ><p lang="en">
+            <span class="header__logo--start">Web</span
+            ><span class="header__logo--end">Studio</span>
+          </p></a
+        >
+        <nav class="header-nav">
+          <ul class="header-nav__list">
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="./index.html">Студія</a>
+            </li>
+            <li class="header-nav__item">
+              <a
+                class="header-nav__link header-nav__link--current"
+                href="./portfolio.html"
+                >Портфоліо</a
+              >
+            </li>
+            <li class="header-nav__item header-nav__item--active">
+              <a
+                class="header-nav__link header-nav__link--active"
+                href="./contacts.html"
+                >Контакти</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <ul class="header-contact">
+          <li class="header-contact__item">
+            <svg class="header-contact__img header-contact__img--start">
+              <use href="./img/sprite.svg#envelope"></use>
+            </svg>
+            <a
+              class="header-contact__mail header-contact__link"
+              href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+          <li class="header-contact__item">
+            <svg class="header-contact__img header-contact__img--end">
+              <use href="./img/sprite.svg#smartphone"></use>
+            </svg>
+            <a
+              class="header-contact__number header-contact__link"
+              href="tel:+380961111111"
+              >+38 096 111 11 11</a
+            >
+          </li>
+        </ul>
+        <button
+          class="menu-btn js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg
+            class="menu-svg"
+            width="24px"
+            height="16px"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use href="./img/sprite.svg#nav-menu"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main class="ua"></main>
+  </body>
+</html>
